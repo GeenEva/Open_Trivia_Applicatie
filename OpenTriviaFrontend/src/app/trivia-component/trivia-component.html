@@ -1,0 +1,74 @@
+<div class="quiz-screen">
+  @if (!result() && currentQuestion; as q) {
+  <div class="quiz-card">
+
+    <h2>{{ q.question }}</h2>
+
+    <div class="answers">
+      @for (answer of q.allAnswers; track answer) {
+      <label>
+        <input type="radio" name="answer-{{ q.id }}" [value]="answer" [checked]="q.chosenAnswer === answer"
+          (change)="selectAnswer(q.id, answer)" />
+        {{ answer }}
+      </label>
+      }
+    </div>
+<div class="buttons">
+
+  @if (currentIndex() < questions().length - 1) {
+    <button
+      (click)="nextQuestion()"
+      [disabled]="!currentQuestion.chosenAnswer">
+      Volgende vraag
+    </button>
+  } @else {
+    <button
+      (click)="submitAll()"
+      [disabled]="!allQuestionsAnswered()">
+      Check antwoorden
+    </button>
+  }
+
+</div>
+
+    <p>
+      Vraag {{ currentIndex() + 1 }} van {{ questions().length }}
+    </p>
+
+  </div>
+  }
+
+  @if (result(); as r) {
+  <div class="result">
+
+    <h2>Score: {{ score }} / {{ total }}</h2>
+
+    <div class="results-list">
+      @for (res of r; track res.question) {
+      <div class="result-item">
+
+        <p>
+          {{ res.question }}:
+
+          @if (res.isWellAnswered) {
+          <span>✔ Goed</span>
+          } @else {
+          <span>❌ Fout</span>
+          }
+
+          juiste antwoord: {{res.correctAnswer}}
+          
+        </p>
+
+      </div>
+      }
+    </div>
+
+    <button (click)="resetQuiz()">
+      Opnieuw spelen
+    </button>
+
+  </div>
+  }
+
+</div>

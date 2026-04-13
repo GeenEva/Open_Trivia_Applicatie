@@ -1,0 +1,14 @@
+.start-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+}

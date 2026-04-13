@@ -1,0 +1,41 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Science: Mathematics",
+            "question": "What is the mathematician Euler&#039;s first name?",
+            "correct_answer": "Leonhard",
+            "incorrect_answers": [
+                "Lionel",
+                "Andrin",
+                "Ajan"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Science: Mathematics",
+            "question": "What&#039;s the square root of 49?",
+            "correct_answer": "7",
+            "incorrect_answers": [
+                "4",
+                "12",
+                "9"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Science: Mathematics",
+            "question": "How many sides does a pentagon have?",
+            "correct_answer": "5",
+            "incorrect_answers": [
+                "9",
+                "6",
+                "4"
+            ]
+        }
+    ]
+}
