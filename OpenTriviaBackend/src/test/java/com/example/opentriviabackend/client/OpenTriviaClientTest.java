@@ -1,6 +1,6 @@
 package com.example.opentriviabackend.client;
 
-import com.example.opentriviabackend.dto.response.OpenTriviaResponseDto;
+import com.example.opentriviabackend.dto.clientResponse.OpenTriviaResponseDto;
 import com.example.opentriviabackend.mapper.TriviaMapper;
 import com.example.opentriviabackend.model.TriviaQuestion;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -96,8 +97,8 @@ class OpenTriviaClientTest {
 
     private OpenTriviaResponseDto loadResponse(String file) throws Exception {
         String json = new String(
-                getClass().getClassLoader()
-                        .getResourceAsStream(file)
+                Objects.requireNonNull(getClass().getClassLoader()
+                                .getResourceAsStream(file))
                         .readAllBytes()
         );
 

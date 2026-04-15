@@ -1,4 +1,4 @@
-package com.example.opentriviabackend.dto.response;
+package com.example.opentriviabackend.dto.clientResponse;
 
 import java.util.List;
 

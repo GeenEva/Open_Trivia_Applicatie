@@ -1,6 +1,6 @@
 package com.example.opentriviabackend.mapper;
 
-import com.example.opentriviabackend.dto.response.OpenTriviaResponseDto;
+import com.example.opentriviabackend.dto.clientResponse.OpenTriviaResponseDto;
 import com.example.opentriviabackend.model.TriviaQuestion;
 import org.apache.commons.text.StringEscapeUtils;
 

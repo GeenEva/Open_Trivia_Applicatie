@@ -58,7 +58,7 @@ class TriviaServiceTest {
 
         mockSingleQuestion();
 
-        var request = new AnswerRequestDto(QUESTION_ID_1, givenAnswer, false);
+        var request = new AnswerRequestDto(QUESTION_ID_1, givenAnswer);
 
         var result = service.checkAnswers(List.of(request));
 
@@ -79,7 +79,7 @@ class TriviaServiceTest {
         when(client.fetchQuestions()).thenReturn(List.of());
         service.getQuestions();
 
-        var request = new AnswerRequestDto("unknown", CORRECT_ANSWER, false);
+        var request = new AnswerRequestDto("unknown", CORRECT_ANSWER);
 
         var ex = assertThrows(
                 IllegalArgumentException.class,

@@ -61,8 +61,8 @@ class OpenTriviaControllerTest {
     void checkAnswers_shouldReturnResults() throws Exception {
 
         List<AnswerRequestDto> request = List.of(
-                new AnswerRequestDto(QUESTION_ID_1, ANSWER_A, true),
-                new AnswerRequestDto(QUESTION_ID_2, ANSWER_B, false)
+                new AnswerRequestDto(QUESTION_ID_1, ANSWER_A),
+                new AnswerRequestDto(QUESTION_ID_2, ANSWER_B)
         );
 
         List<AnswerResultDto> response = List.of(

@@ -1,6 +1,6 @@
 package com.example.opentriviabackend.client;
 
-import com.example.opentriviabackend.dto.response.OpenTriviaResponseDto;
+import com.example.opentriviabackend.dto.clientResponse.OpenTriviaResponseDto;
 import com.example.opentriviabackend.mapper.TriviaMapper;
 import com.example.opentriviabackend.model.TriviaQuestion;
 import org.springframework.stereotype.Component;

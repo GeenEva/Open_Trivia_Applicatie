@@ -1,6 +1,6 @@
 package com.example.opentriviabackend.mapper;
 
-import com.example.opentriviabackend.dto.response.OpenTriviaResponseDto;
+import com.example.opentriviabackend.dto.clientResponse.OpenTriviaResponseDto;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 

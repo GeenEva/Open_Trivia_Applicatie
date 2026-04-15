@@ -33,27 +33,27 @@ public class TriviaService {
 
     public List<AnswerResultDto> checkAnswers(List<AnswerRequestDto> givenAnswers)  {
 
-        var results = new ArrayList<AnswerResultDto>();
+        var answerResults = new ArrayList<AnswerResultDto>();
 
         for (AnswerRequestDto givenAnswer : givenAnswers) {
-            var question = questionStore.get(givenAnswer.questionId());
+            var questionId = questionStore.get(givenAnswer.questionId());
 
-            if (question == null) {
+            if (questionId == null) {
                 throw new IllegalArgumentException("Question not found for id: " + givenAnswer.questionId());
             }
 
-            boolean isCorrect = question.getCorrectAnswer()
+            boolean isCorrect = questionId.getCorrectAnswer()
                     .equals(givenAnswer.givenAnswer());
 
-            results.add(new AnswerResultDto(
-                    question.getId(),
-                    question.getQuestion(),
+            answerResults.add(new AnswerResultDto(
+                    questionId.getId(),
+                    questionId.getQuestion(),
                     isCorrect,
-                    question.getCorrectAnswer()
+                    questionId.getCorrectAnswer()
             ));
         }
 
-        return results;
+        return answerResults;
     }
 
     private void rebuildQuestionStore(List<TriviaQuestion> questions) {
