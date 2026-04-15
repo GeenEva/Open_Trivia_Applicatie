@@ -4,6 +4,7 @@ import com.example.opentriviabackend.dto.answer.AnswerRequestDto;
 import com.example.opentriviabackend.dto.answer.AnswerResultDto;
 import com.example.opentriviabackend.model.TriviaQuestion;
 import com.example.opentriviabackend.service.TriviaService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class OpenTriviaController {
     }
 
     @PostMapping("/checkAnswers")
-    public List<AnswerResultDto> checkAnswers(@RequestBody List<AnswerRequestDto> givenAnswers) {
+    public List<AnswerResultDto> checkAnswers(@Valid @RequestBody List<AnswerRequestDto> givenAnswers) {
         return triviaService.checkAnswers(givenAnswers);
     }
 
