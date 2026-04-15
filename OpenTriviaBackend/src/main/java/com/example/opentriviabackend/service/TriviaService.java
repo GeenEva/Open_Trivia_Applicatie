@@ -36,20 +36,20 @@ public class TriviaService {
         var answerResults = new ArrayList<AnswerResultDto>();
 
         for (AnswerRequestDto givenAnswer : givenAnswers) {
-            var questionId = questionStore.get(givenAnswer.questionId());
+            var question = questionStore.get(givenAnswer.questionId());
 
-            if (questionId == null) {
+            if (question == null) {
                 throw new IllegalArgumentException("Question not found for id: " + givenAnswer.questionId());
             }
 
-            boolean isCorrect = questionId.getCorrectAnswer()
+            boolean isCorrect = question.getCorrectAnswer()
                     .equals(givenAnswer.givenAnswer());
 
             answerResults.add(new AnswerResultDto(
-                    questionId.getId(),
-                    questionId.getQuestion(),
+                    question.getId(),
+                    question.getQuestion(),
                     isCorrect,
-                    questionId.getCorrectAnswer()
+                    question.getCorrectAnswer()
             ));
         }
 
